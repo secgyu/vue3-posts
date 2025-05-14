@@ -5,5 +5,12 @@ import 'bootstrap/dist/js/bootstrap.js'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import globalDirective from './plugins/global-directive'
+import dayjsPlugin from './plugins/dayjs'
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+app.use(globalDirective)
+app.use(dayjsPlugin)
+app.use(router)
+app.mount('#app')
+// app.use(globalComponents)
